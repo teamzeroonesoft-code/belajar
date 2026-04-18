@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2026 at 01:12 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 18 Apr 2026 pada 15.06
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,69 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `content`
+-- Struktur dari tabel `barang`
 --
 
-CREATE TABLE `content` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `path` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL
+CREATE TABLE `barang` (
+  `id_barang` int(11) NOT NULL,
+  `nama_barang` varchar(255) NOT NULL,
+  `kode_barang` varchar(255) NOT NULL,
+  `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `role`, `name`) VALUES
-(1, 'admin', '$2y$10$WLjtj4bK3IPkzhY539X19.xFbCtHGiBiXDDoPA4GqrQ531oSsWlbu', 'admin', 'admin zero one');
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `kode_barang`, `tanggal_masuk`) VALUES
+(1, 'pensil', 'KD1JOMOK', '2026-04-09'),
+(2, 'pulpen', 'KD2JOMOK', '2026-04-18');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `content`
+-- Indeks untuk tabel `barang`
 --
-ALTER TABLE `content`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `content`
+-- AUTO_INCREMENT untuk tabel `barang`
 --
-ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `barang`
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
