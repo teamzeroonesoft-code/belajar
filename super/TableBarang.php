@@ -24,12 +24,16 @@
 
     <table border="1">
         <tr>
+            <th>No</th>
+            <th>Gambar</th>
             <th>Nama Barang</th>
             <th>Kode Barang</th>
             <th>Tanggal Terima</th>
         </tr>
-    <?php foreach($barang as $brg){?>
+    <?php $no = 1; foreach($barang as $brg){?>
         <tr>
+            <td><?= $no++ ?></td>
+            <td><?=" "?></td>
             <td><?= $brg['nama_barang']?></td>
             <td><?= $brg['kode_barang']?></td>
             <td><?= $brg['tanggal_masuk']?></td>

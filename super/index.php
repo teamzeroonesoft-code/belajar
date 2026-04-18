@@ -92,24 +92,22 @@ include "../conection.php";
     <table class="table">
     <thead>
         <tr>
-            <th scope = "col">#</th>
+            <th scope = "col">No</th>
             <th scope = "col">Username</th>
             <th scope = "col">Nama</th>
             <th scope = "col">Role</th>
             <th scope = "col">Aksi</th>
-            <?php $i = 1?>
         </tr>
     </thead>
     <tbody>
-    <?php foreach($users as $usr){?>
+    <?php $no = 1; foreach($users as $usr){?>
         <tr>
-            <th scope = "row"><?= $i?></th>
+            <th scope = "row"><?= $no++?></th>
             <td><?= $usr['username']?></td>
             <td><?= $usr['name']?></td>
             <td><?= $usr['role']?></td>
             <td><a href="">Edit</a> | <a href="">Hapus</a></a></td>
         </tr>
-        <?php $i++?>
     <?php } ?>
     </tbody>
     </table>
